@@ -1,5 +1,5 @@
 const token = process.env.TOKEN;
-
+const stickers = require('./stickers.json')
 const Bot = require('node-telegram-bot-api');
 let bot;
 
@@ -13,23 +13,23 @@ else {
 
 console.log('Bot server started in the ' + process.env.NODE_ENV + ' mode');
 
-bot.onText(/\/echo (.+)/, (msg, match) => {
-  // 'msg' is the received Message from Telegram
-  // 'match' is the result of executing the regexp above on the text content
-  // of the message
-
+bot.onText(/\/s (.+)/, (msg, match) => {
   const chatId = msg.chat.id;
-  const resp = match[1]; // the captured "whatever"
+  const resp = match[1];
 
-  // send back the matched "whatever" to the chat
-  bot.sendMessage(chatId, resp);
+  if (resp in stickers){
+    const sticker = stickers[resp]
+    bot.sendSticker(chatId, sticker);
+  }
 });
 
+/*
 bot.on('message', (msg) => {
-  const name = msg.from.first_name;
-  bot.sendMessage(msg.chat.id, 'Tokage: Hello, ' + name + '!').then(() => {
-    // reply sent!
-  });
-});
+  const chatId = msg.chat.id;
 
+  // send a message to the chat acknowledging receipt of their message
+  // bot.sendMessage(chatId, 'Received your message');
+  bot.sendSticker(chatId, 'CAADBQADUgADJZO8Fktt4y20_XaQAg');
+});
+*/
 module.exports = bot;

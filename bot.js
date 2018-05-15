@@ -1,5 +1,6 @@
 const token = process.env.TOKEN;
-const stickers = require('./stickers.json')
+const _ = require('lodash');
+const stickers = require('./stickers.js')
 const Bot = require('node-telegram-bot-api');
 let bot;
 
@@ -17,10 +18,21 @@ bot.onText(/(.+)/, (msg, match) => {
   const chatId = msg.chat.id;
   const resp = match[1];
 
+  if (resp == '/help') {
+    bot.sendMessage(chatId, "呆呆：貼圖表!\n\n" + _.keys(stickers).join("\n")  )
+  }
+
   if (resp in stickers){
     const sticker = stickers[resp]
-    bot.sendSticker(chatId, sticker);
+    if (_.isArray(sticker)) {
+      sticker.forEach( s => {
+        bot.sendSticker(chatId, s);
+      })
+    } else {
+      bot.sendSticker(chatId, sticker);
+    }
   }
+
 });
 
 /*

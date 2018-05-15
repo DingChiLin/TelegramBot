@@ -13,9 +13,9 @@ else {
 
 console.log('Bot server started in the ' + process.env.NODE_ENV + ' mode');
 
-bot.onText(/\/s (.+)/, (msg, match) => {
+bot.onText(/(s|S) (.+)/, (msg, match) => {
   const chatId = msg.chat.id;
-  const resp = match[1];
+  const resp = match[2];
 
   if (resp in stickers){
     const sticker = stickers[resp]

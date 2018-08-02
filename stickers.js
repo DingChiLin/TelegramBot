@@ -14,7 +14,7 @@ const stickers = {
   "抱" : "CAADBQADnAMAAqxU0wXSslTisUXynAI",
   "騷你癢" : "CAADBQADhAQAAtgGigRI4umjpXWDjwI",
   "打打鬧鬧" : "CAADBQADagQAAtgGigST8ITqDcFkEwI",
-  "耶" : "CAADBQADegQAAtgGigSP6jRK50n46wI",
+  "耶耶" : "CAADBQADegQAAtgGigSP6jRK50n46wI",
 
   // 蠢熊1
   "在等" : "CAADAQADhhAAAvoPCRSYFlEAASQ_FEMC",
@@ -31,7 +31,7 @@ const stickers = {
   "沒辦法" : "CAADBQADNwADGmbGFWxwCUNkstKtAg",
   "緊張" : "CAADBQADPwADGmbGFdFnz5hgv87kAg",
   "需要抱" : "CAADBQADRgADGmbGFYxcZuwU5UtFAg",
-  "撒嬌" : "CAADBQADUAADGmbGFc93MxKQO7ynAg",
+  "想撒嬌" : "CAADBQADUAADGmbGFc93MxKQO7ynAg",
   "沒有想很多" : "CAADBQADRAADGmbGFYVyYZ0DGfEtAg",
   "不想工作" : "CAADBQADRwADGmbGFUz6gyzuxXI_Ag",
   "害羞" : "CAADBQADSwADGmbGFVSLaFI0CjlRAg",
@@ -91,7 +91,7 @@ const stickers = {
   "想玩" : "CAADBQADkAEAAkV-thfdqLlMy0js4AI",
   "休息" : "CAADBQADkwEAAkV-thckCgVmgzppvgI",
   "煩惱" : "CAADBQADiAEAAkV-thcNeEFlVCz_jAI",
-  
+
   // 蠢熊6
   "回家" : "CAADBQADLgADvGm5DGWrjTs1uS7RAg",
   "不關我的事" : "CAADBQADLQADvGm5DG5GcXooR7A2Ag",

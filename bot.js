@@ -22,6 +22,25 @@ bot.onText(/(.+)/, (msg, match) => {
     bot.sendMessage(chatId, "呆呆：貼圖表!\n\n" + _.keys(stickers).join("\n")  )
   }
 
+  _.forEach(stickers, function(sticker, key) {
+    if(resp.includes(key)){
+      if (_.isArray(sticker)) {
+        const type = sticker[0]
+        const stickerContent = sticker.slice(1)
+        if (type == 's') {
+          stickerContent.forEach( s => {
+            bot.sendSticker(chatId, s);
+          })
+        } else if (type == 'r') {
+          const index = getRandomInt(stickerContent.length)
+          bot.sendSticker(chatId, stickerContent[index])
+        }
+      } else {
+        bot.sendSticker(chatId, sticker);
+      }
+    }
+  })
+/*
   if (resp in stickers){
     const sticker = stickers[resp]
     if (_.isArray(sticker)) {
@@ -39,7 +58,7 @@ bot.onText(/(.+)/, (msg, match) => {
       bot.sendSticker(chatId, sticker);
     }
   }
-
+*/
 });
 
 function getRandomInt(max) {

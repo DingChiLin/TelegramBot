@@ -14,7 +14,7 @@ const stickers = {
   "抱" : "CAADBQADnAMAAqxU0wXSslTisUXynAI",
   "騷你癢" : "CAADBQADhAQAAtgGigRI4umjpXWDjwI",
   "打打鬧鬧" : "CAADBQADagQAAtgGigST8ITqDcFkEwI",
-  "耶耶" : "CAADBQADegQAAtgGigSP6jRK50n46wI",
+  "啾" : "CAADBQADrgMAAqxU0wXk9aQD0BS_VgI",
 
   // 蠢熊1
   "在等" : "CAADAQADhhAAAvoPCRSYFlEAASQ_FEMC",
@@ -35,7 +35,7 @@ const stickers = {
   "沒有想很多" : "CAADBQADRAADGmbGFYVyYZ0DGfEtAg",
   "不想工作" : "CAADBQADRwADGmbGFUz6gyzuxXI_Ag",
   "害羞" : "CAADBQADSwADGmbGFVSLaFI0CjlRAg",
-  "電話" : "CAADBQADSgADGmbGFU5LHiRc7f1tAg",
+  "想講電話" : "CAADBQADSgADGmbGFU5LHiRc7f1tAg",
 
   // 蠢熊3
   "擔心的人" : "CAADBQAD6wADJeDrDiEMJ04IPh1gAg",
@@ -69,14 +69,14 @@ const stickers = {
   "不年輕" : "CAADBQADYAEAAkV-thfJ4T028H192QI",
   "去吃飯" : "CAADBQADXQEAAkV-thcJpt7gsw2hFwI",
   "好像是" : "CAADBQADdAEAAkV-thdHnl1bkzsTJwI",
-  "神" : "CAADBQADegEAAkV-thdw0kNTvEfZaAI",
+  "神仙" : "CAADBQADegEAAkV-thdw0kNTvEfZaAI",
   "聽不到" : "CAADBQADeAEAAkV-thcu5BLOanTKlQI",
 
   // 蠢熊5
   "無關" : "CAADBQADfwEAAkV-thenoQuKYoI6ZwI",
   "同意" : "CAADBQADhAEAAkV-thdI27GYHsaH4QI",
-  "不錯" : "CAADBQADiQEAAkV-thds4aIi-WncvgI",
-  "不要" : "CAADBQADjQEAAkV-theORFHiAYOvMQI",
+  "覺得不錯" : "CAADBQADiQEAAkV-thds4aIi-WncvgI",
+  "不要啦" : "CAADBQADjQEAAkV-theORFHiAYOvMQI",
   "肚子痛" : "CAADBQADiwEAAkV-theBpXq2-s_OXQI",
   "抱怨" : "CAADBQADlQEAAkV-thcTSgmwjOxmHwI",
   "哪有" : "CAADBQADlAEAAkV-thcVK2qbMMobLAI",
@@ -95,7 +95,6 @@ const stickers = {
   // 蠢熊6
   "回家" : "CAADBQADLgADvGm5DGWrjTs1uS7RAg",
   "不關我的事" : "CAADBQADLQADvGm5DG5GcXooR7A2Ag",
-  "想睡" : "CAADBQADNgADvGm5DO2frP40tPdxAg",
   "放棄" : "CAADBQADPwADvGm5DP0cWAABZZQlsAI",
   "怎麼辦" : "CAADBQADRwADvGm5DFVDiXLXDrgRAg",
   "歡迎撒嬌" : "CAADBQADSAADvGm5DBBf2jMkoti3Ag",
@@ -106,8 +105,7 @@ const stickers = {
   "說一次" : "CAADBQADQQADvGm5DDiTwwwIb63-Ag",
 
   // 圖組
-
-  "睡覺" : ["r",
+  "晚安" : ["r",
     "CAADBQADNwADvGm5DNzJ-OQlsOtiAg",
     "CAADBQADIAADJZO8FtVJXEG4oDHNAg",
     "CAADBQADBBQAAqE22Qbfoj_d2oVxWwI",
@@ -126,10 +124,11 @@ const stickers = {
     "CAADBQADJQ0AAp1yBAeaF19sfJ01XwI",
     "CAADBQADogIAAiXg6w7-NrzqwJglAwI",
     "CAADAgAD9ksAAuCjggfA8Y22jXsHVwI",
+    "CAADBQADMQIAAiXg6w4F9he5xQWBSQI",
     "CAADAgAD8ksAAuCjggfiLw1chxolsgI",
   ],
 
-"洗澡" : ["r",
+  "洗澡" : ["r",
     "CAADBQADiBYAAp7UXgPQB-SoNmVviwI",
     "CAADBQADkgEAAl79hgjdfiFqgUOSWgI",
     "CAADBQADXAEAAkV-thdGwo1gavtO4wI",
@@ -158,3 +157,4 @@ const stickers = {
 }
 
 module.exports = stickers
+

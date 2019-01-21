@@ -22,6 +22,10 @@ bot.onText(/(.+)/, (msg, match) => {
     bot.sendMessage(chatId, "呆呆：貼圖表!\n\n" + _.keys(stickers).join("\n")  )
   }
 
+  if (resp == '前任' || resp == '前女友') {
+    bot.sendMessage(chatId, "幹你娘閉嘴")
+  }
+
   _.forEach(stickers, function(sticker, key) {
     if(resp.includes(key)){
       if (_.isArray(sticker)) {

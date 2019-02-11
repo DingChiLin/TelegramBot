@@ -5,6 +5,10 @@ const stickers = {
   "daidai" : "CAADBQADRQADJZO8FsuhYE3anrL-Ag",
   "不是啦" : "CAADBQADWAADJZO8FtYitNHmINGRAg",
   "小船" : "CAADBQADQgADJZO8FgLpaOzNVstKAg",
+  "愛媽咪" : ["r",
+    "CAADBQADNTcAAtcdiwaZRcqcwt_kvgI",
+    "CAADBQADUwADJZO8Fo7pCfpIWVdjAg",
+  ],
 
   // 蠢熊熱戀
   "拍拍" : "CAADBQADngMAAqxU0wVDxkN1COunKQI",
@@ -15,6 +19,7 @@ const stickers = {
   "騷你癢" : "CAADBQADhAQAAtgGigRI4umjpXWDjwI",
   "打打鬧鬧" : "CAADBQADagQAAtgGigST8ITqDcFkEwI",
   "啾" : "CAADBQADrgMAAqxU0wXk9aQD0BS_VgI",
+  "寶貝" : "CAADBQADoAMAAqxU0wXyTPqMjROVIAI",
 
   // 蠢熊1
   "在等" : "CAADAQADhhAAAvoPCRSYFlEAASQ_FEMC",
@@ -48,13 +53,14 @@ const stickers = {
   "努力" : "CAADBQAEAQACJeDrDpdd9F7ZvuQdAg",
 
   // 蠢熊3.5
-  "踢踢" : "CAADBQADPAAD10JZFXfWhUXxM12mAg",
+  "踢踢" : ["r", "CAADBQADdAADSkiSDSBl-MQnOSnwAg", "CAADBQADPAAD10JZFXfWhUXxM12mAg"],
   "躺下" : "CAADBQADPQAD10JZFWBiigu8ftRPAg",
   "爬起" : "CAADBQADPgAD10JZFUH2OAfH9UzDAg",
   "滾滾" : "CAADBQADPwAD10JZFZdGN0nG8907Ag",
   "倒下" : "CAADBQADQAAD10JZFXXYetnHn5BMAg",
   "走來走去" : ["s", "CAADBQADRgAD10JZFXDN9YPQHVgiAg", "CAADBQADRwAD10JZFQbZlU1vUlz6Ag"],
   "跳來跳去" : ["s", "CAADBQADSAAD10JZFUNlohbgBVuQAg", "CAADBQADSQAD10JZFTcoXgAB7VdpUgI"],
+  "滾來滾去" : "CAADBQADPwAD10JZFZdGN0nG8907Ag",
   "寫字" : "CAADBQADSwAD10JZFRyVzUz939XzAg",
   "擦擦" : "CAADBQADTAAD10JZFSUG8nCi0HHAAg",
   "隱形" : "CAADBQADTgAD10JZFS8Tjh0Pz1VUAg",

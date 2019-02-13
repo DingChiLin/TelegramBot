@@ -3,6 +3,7 @@ const stickers = {
   "wow" : "CAADBQADUgADJZO8Fktt4y20_XaQAg",
   "wow!" : "CAADBQADTwADJZO8FuiRZOTanyWEAg",
   "daidai" : "CAADBQADRQADJZO8FsuhYE3anrL-Ag",
+  "發呆" : "CAADBQADRQADJZO8FsuhYE3anrL-Ag",
   "不是啦" : "CAADBQADWAADJZO8FtYitNHmINGRAg",
   "小船" : "CAADBQADQgADJZO8FgLpaOzNVstKAg",
   "愛媽咪" : ["r",
@@ -20,6 +21,8 @@ const stickers = {
   "打打鬧鬧" : "CAADBQADagQAAtgGigST8ITqDcFkEwI",
   "啾" : "CAADBQADrgMAAqxU0wXk9aQD0BS_VgI",
   "寶貝" : "CAADBQADoAMAAqxU0wXyTPqMjROVIAI",
+  "咬咬咬" : "CAADBQADsgMAAqxU0wVT3QfZMZ8GyAI",
+  "想摸頭" : "CAADBQADkgMAAqxU0wWw8D13NS0IcwI",
 
   // 蠢熊1
   "在等" : "CAADAQADhhAAAvoPCRSYFlEAASQ_FEMC",
@@ -60,7 +63,7 @@ const stickers = {
   "倒下" : "CAADBQADQAAD10JZFXXYetnHn5BMAg",
   "走來走去" : ["s", "CAADBQADRgAD10JZFXDN9YPQHVgiAg", "CAADBQADRwAD10JZFQbZlU1vUlz6Ag"],
   "跳來跳去" : ["s", "CAADBQADSAAD10JZFUNlohbgBVuQAg", "CAADBQADSQAD10JZFTcoXgAB7VdpUgI"],
-  "滾來滾去" : "CAADBQADPwAD10JZFZdGN0nG8907Ag",
+  "滾來滾去" : ["r", "CAADBQADPwAD10JZFZdGN0nG8907Ag", "CAADBQADLgQAAiXg6w6257LuVUPhGAI"],
   "寫字" : "CAADBQADSwAD10JZFRyVzUz939XzAg",
   "擦擦" : "CAADBQADTAAD10JZFSUG8nCi0HHAAg",
   "隱形" : "CAADBQADTgAD10JZFS8Tjh0Pz1VUAg",
@@ -109,6 +112,24 @@ const stickers = {
   "老練" : "CAADBQADOwADvGm5DGqK7bkLmkudAg",
   "歪了" : "CAADBQADUAADvGm5DF2MqIksQeymAg",
   "說一次" : "CAADBQADQQADvGm5DDiTwwwIb63-Ag",
+
+  // 蠢熊 6.5
+  "耶耶耶" : "CAADBQADTgIAAiXg6w4h5Z1b4HPMTgI",
+
+  // 熱戀
+  "棋棋在你身邊" : "CAADBQADlQkAAtgqVg2vdJz7LqpgYwI",
+  "棋棋想你" : "CAADBQADgQkAAtgqVg3qbS_9CtkuVQI",
+
+  // 熱戀
+  "棋棋愛你" : ["r"
+    "CAADBQADZb0AAkZlEQLDFrEtIyuWpwI",
+    "CAADBQADfr0AAkZlEQJQ-f_GRu33-QI",
+    "CAADBQADib0AAkZlEQIiUwgDmLPJXwI",
+    "CAADBQADjQkAAtgqVg3rTyeyr5YVbgI",
+    "CAADBQADkwkAAtgqVg3spa0hfEu3qAI",
+    "CAADBQADcwkAAtgqVg2fJrsRBVqP7gI",
+    "CAADBQADoQkAAtgqVg3x1mZlbZneegI",
+  ],
 
   // 圖組
   "晚安" : ["r",

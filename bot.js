@@ -19,7 +19,7 @@ else {
 bot.onText(/(.+)/, (msg, match) => {
   const chatId = msg.chat.id;
   const resp = match[1];
-/*
+
   if (resp == '/test') {
     bot.sendMessage(chatId, '晚安');
   }
@@ -54,7 +54,7 @@ bot.onText(/(.+)/, (msg, match) => {
       bot.sendSticker(chatId, sticker);
     }
   })
-*/
+
 });
 
 function stickerMessage(resp) {
@@ -166,18 +166,12 @@ function secretMessage(date, hour) {
       case '2019-02-28':
         messages = [
           '今天是內觀第八天',
-          '',
-          '',
-          '',
         ];
         break;
 
       case '2019-03-01':
         messages = [
           '今天是內觀第九天',
-          '',
-          '',
-          '',
         ];
         break;
 

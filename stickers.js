@@ -56,7 +56,7 @@ const stickers = {
   "努力" : "CAADBQAEAQACJeDrDpdd9F7ZvuQdAg",
 
   // 蠢熊3.5
-  "踢踢" : ["r", "CAADBQADdAADSkiSDSBl-MQnOSnwAg", "CAADBQADPAAD10JZFXfWhUXxM12mAg"],
+  "踢踢" : ["r", "CAADBQADdAADSkiSDSBl-MQnOSnwAg", "CAADBQADPAAD10JZFXfWhUXxM12mAg", "CAADBQADzwEAAiXg6w6BlzCj4NNggwI"],
   "躺下" : "CAADBQADPQAD10JZFWBiigu8ftRPAg",
   "爬起" : "CAADBQADPgAD10JZFUH2OAfH9UzDAg",
   "滾滾" : "CAADBQADPwAD10JZFZdGN0nG8907Ag",

@@ -121,7 +121,7 @@ const stickers = {
   "棋棋想你" : "CAADBQADgQkAAtgqVg3qbS_9CtkuVQI",
 
   // 熱戀
-  "棋棋愛你" : ["r"
+  "棋棋愛你" : ["r",
     "CAADBQADZb0AAkZlEQLDFrEtIyuWpwI",
     "CAADBQADfr0AAkZlEQJQ-f_GRu33-QI",
     "CAADBQADib0AAkZlEQIiUwgDmLPJXwI",

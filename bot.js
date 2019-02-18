@@ -194,7 +194,7 @@ function secretMessage(date, hour) {
         break;
 
       default:
-        messages = '想你～';
+        messages = ['想你～'];
     }
   }
 

@@ -24,7 +24,7 @@ bot.onText(/(.+)/, (msg, match) => {
     bot.sendMessage(chatId, '晚安');
   }
 
-  if (resp == '/misschichi') {
+  if (resp == '想棋棋') {
     m = moment().tz('Asia/Taipei');
     date = m.format('YYYY-MM-DD');
     hour = m.format('HH');

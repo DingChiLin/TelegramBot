@@ -1,7 +1,7 @@
 const _ = require('lodash');
 const Bot = require('node-telegram-bot-api');
 const moment = require('moment-timezone');
-const schedule = require('node-schedule');
+const schedule = require('node-schedule-tz');
 
 const stickers = require('./stickers.js');
 const token = process.env.TOKEN;
@@ -26,25 +26,21 @@ else {
   chatId = chatIds["TokageBot"]
 }
 
-// 餐三吃什麼
+// 三餐吃什麼
 var healthScore = 0
-schedule.scheduleJob('0 45 23 * * *', function(){
-  console.log('HI');
+schedule.scheduleJob({rule: '0 15 0 * * *', tz: 'Asia/Taipei'}, function(){
   bot.sendMessage(chatId, "爸比早餐吃什麼")
 });
 
-schedule.scheduleJob('0 0 13 * * *', function(){
-  console.log('HI');
+schedule.scheduleJob('0 5 0 * * *', function(){
   bot.sendMessage(chatId, "爸比中餐吃什麼")
 });
 
 schedule.scheduleJob('0 0 19 * * *', function(){
-  console.log('HI');
   bot.sendMessage(chatId, "爸比晚餐吃什麼")
 }); 
 
 schedule.scheduleJob('0 0 19 * * *', function(){
-  console.log('HI');
   bot.sendMessage(chatId, "爸比今天有吃健康嗎？ 記得一餐吃菜菜，還有不超過一餐油炸的喔～", {
       "reply_markup": { 
         "inline_keyboard": [[
@@ -71,7 +67,6 @@ bot.on("callback_query", (callbackQuery) => {
 bot.onText(/(.+)/, (msg, match) => {
   const chatId = msg.chat.id;
   const resp = match[1];
-  console.log(chatId)
 
   if (resp == '/test') {
     bot.sendMessage(chatId, '晚安');

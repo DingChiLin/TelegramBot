@@ -19,6 +19,7 @@ else {
 bot.onText(/(.+)/, (msg, match) => {
   const chatId = msg.chat.id;
   const resp = match[1];
+  console.log(resp)
 
   if (resp == '/test') {
     bot.sendMessage(chatId, '晚安');

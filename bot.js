@@ -28,7 +28,7 @@ else {
 
 // 三餐吃什麼
 var healthScore = 0
-schedule.scheduleJob({rule: '0 27 11 * * *'}, function(){
+schedule.scheduleJob({rule: '0 30 9 * * *'}, function(){
   bot.sendMessage(chatId, "爸比早餐吃什麼")
 });
 

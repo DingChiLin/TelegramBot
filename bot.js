@@ -3,7 +3,7 @@ const Bot = require('node-telegram-bot-api');
 const moment = require('moment-timezone');
 const schedule = require('node-schedule-tz');
 
-const stickers = require('./stickers.js');
+const stickerMapping = require('./stickers.js');
 const token = process.env.TOKEN;
 
 const chatIds = {
@@ -28,11 +28,11 @@ else {
 
 // 三餐吃什麼
 var healthScore = 0
-schedule.scheduleJob({rule: '0 15 0 * * *', tz: 'Asia/Taipei'}, function(){
+schedule.scheduleJob({rule: '0 27 11 * * *'}, function(){
   bot.sendMessage(chatId, "爸比早餐吃什麼")
 });
 
-schedule.scheduleJob('0 5 0 * * *', function(){
+schedule.scheduleJob('0 0 13 * * *', function(){
   bot.sendMessage(chatId, "爸比中餐吃什麼")
 });
 
@@ -64,69 +64,72 @@ bot.on("callback_query", (callbackQuery) => {
   }
 });
 
+// Reply message
 bot.onText(/(.+)/, (msg, match) => {
   const chatId = msg.chat.id;
   const resp = match[1];
 
   if (resp == '/test') {
-    bot.sendMessage(chatId, '晚安');
-  }
-
-  if (resp.includes("想棋棋")) {
-    m = moment().tz('Asia/Taipei');
-    date = m.format('YYYY-MM-DD');
-    hour = m.format('HH');
-    const message = secretMessage(date, hour)
-    bot.sendMessage(chatId, message);
-
-    const stickers = stickerMessage(message);
-    stickers.forEach( sticker => {
-      if (sticker != '') {
-        bot.sendSticker(chatId, sticker);
+    console.log("test")
+    bot.sendMessage(chatId, "爸比今天有吃健康嗎？ 記得一餐吃菜菜，還有不超過一餐油炸的喔～", {
+      "reply_markup": { 
+        "inline_keyboard": [[
+          {text:"有做到！", callback_data: "true"}, 
+          {text:"沒有QQ", callback_data: "false"}
+        ]]
       }
     })
-
   }
 
-  if (resp == '/help') {
-    bot.sendMessage(chatId, "呆呆：貼圖表!\n\n" + _.keys(stickers).join("\n"));
-  }
+  // if (resp.includes("想棋棋")) {
+  //   m = moment().tz('Asia/Taipei');
+  //   date = m.format('YYYY-MM-DD');
+  //   hour = m.format('HH');
+  //   const message = secretMessage(date, hour)
+  //   bot.sendMessage(chatId, message);
+
+  //   const stickers = stickerMessage(message, stickerMapping);
+  //   stickers.forEach( sticker => {
+  //     if (sticker != '') {
+  //       bot.sendSticker(chatId, sticker);
+  //     }
+  //   })
+  // }
 
   if (resp.includes('前任') || resp.includes('前女友')) {
     bot.sendMessage(chatId, '不要講前任啦～');
   }
 
-  const stickers = stickerMessage(resp);
+  const stickers = stickerMessage(resp, stickerMapping);
   stickers.forEach( sticker => {
     if (sticker != '') {
       bot.sendSticker(chatId, sticker);
     }
   })
-
 });
 
-function stickerMessage(resp) {
-  var stickerMessages = [];
-  _.forEach(stickers, function(sticker, key) {
-    if(resp.includes(key)){
+function stickerMessage(resp, stickerMapping) {
+  var stickers = [];
+  _.forEach(stickerMapping, function(sticker, key) {
+    if(resp.includes(key)) {
       console.log(resp)
       if (_.isArray(sticker)) {
         const type = sticker[0];
         const stickerContent = sticker.slice(1);
         if (type == 's') {
           stickerContent.forEach( s => {
-            stickerMessages.push(s)
+            stickers.push(s)
           })
         } else if (type == 'r') {
           const index = getRandomInt(stickerContent.length);
-          stickerMessages = [stickerContent[index]]
+          stickers = [stickerContent[index]]
         }
       } else {
-        stickerMessages = [sticker];
+        stickers = [sticker];
       }
     }
   })
-  return stickerMessages
+  return stickers
 }
 
 function secretMessage(date, hour) {
@@ -249,9 +252,6 @@ function secretMessage(date, hour) {
 
   const index = getRandomInt(messages.length);
   const secretMessage = messages[index]
-  console.log(index)
-  console.log(messages[index])
-
   return secretMessage;
 }
 

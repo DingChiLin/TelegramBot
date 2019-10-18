@@ -16,6 +16,7 @@
     "express": "^4.13.4",
     "moment-timezone": "^0.5.23",
     "node-schedule-tz": "^1.2.1-4",
-    "node-telegram-bot-api": "^0.30.0"
+    "node-telegram-bot-api": "^0.30.0",
+    "pg": "^7.12.1"
   }
 }

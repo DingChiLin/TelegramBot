@@ -26,22 +26,27 @@ else {
   chatId = chatIds["TokageBot"]
 }
 
+// TODO: Let it ignore timezone (use UTC time and convert time according to local machine)
 // 三餐吃什麼
 var healthScore = 0
-schedule.scheduleJob({rule: '0 30 9 * * *'}, function(){
-  bot.sendMessage(chatId, "爸比早餐吃什麼")
+schedule.scheduleJob({rule: '0 30 09 * * *'}, function(){
+  date = moment().tz('Asia/Taipei').format('YYYY-MM-DD');
+  bot.sendMessage(chatId, `[${date}] <code>爸比早餐吃什麼?</code>`, {"parse_mode": "HTML"})
 });
 
 schedule.scheduleJob('0 0 13 * * *', function(){
-  bot.sendMessage(chatId, "爸比中餐吃什麼")
+  date = moment().tz('Asia/Taipei').format('YYYY-MM-DD');
+  bot.sendMessage(chatId, `[${date}] <code>爸比中餐吃什麼?</code>`, {"parse_mode": "HTML"})
 });
 
 schedule.scheduleJob('0 0 19 * * *', function(){
-  bot.sendMessage(chatId, "爸比晚餐吃什麼")
-}); 
+  date = moment().tz('Asia/Taipei').format('YYYY-MM-DD');
+  bot.sendMessage(chatId, `[${date}] <code>爸比晚餐吃什麼?</code>`, {"parse_mode": "HTML"})
+});
 
 schedule.scheduleJob('0 0 19 * * *', function(){
-  bot.sendMessage(chatId, "爸比今天有吃健康嗎？ 記得一餐吃菜菜，還有不超過一餐油炸的喔～", {
+  bot.sendMessage(chatId, "<code>爸比今天有吃健康嗎？ 記得一餐吃菜菜，還有不超過一餐油炸的喔～</code>", {
+      "parse_mode": "HTML",
       "reply_markup": { 
         "inline_keyboard": [[
           {text:"有做到！", callback_data: "true"}, 
@@ -57,10 +62,13 @@ bot.on("callback_query", (callbackQuery) => {
   if (result == "true") {
     healthScore += 1
     bot.answerCallbackQuery(callbackQuery.id)
-      .then(() => bot.sendMessage(msg.chat.id, `棒棒，健康加一分～: ${healthScore}`));
-  } else{
+      .then(() => bot.sendMessage(msg.chat.id, 
+        `<code>棒棒，健康加一分～累積 ${healthScore} 分囉</code>`, 
+        {"parse_mode": "HTML"})
+      );
+  } else {
     bot.answerCallbackQuery(callbackQuery.id)
-      .then(() => bot.sendMessage(msg.chat.id, `沒關係，明天再加油！`));   
+      .then(() => bot.sendMessage(msg.chat.id, "<code>沒關係，明天再加油！</code>", {"parse_mode": "HTML"}));   
   }
 });
 
@@ -68,17 +76,40 @@ bot.on("callback_query", (callbackQuery) => {
 bot.onText(/(.+)/, (msg, match) => {
   const chatId = msg.chat.id;
   const resp = match[1];
-
+ 
   if (resp == '/test') {
     console.log("test")
-    bot.sendMessage(chatId, "爸比今天有吃健康嗎？ 記得一餐吃菜菜，還有不超過一餐油炸的喔～", {
+    m = moment().tz('Asia/Taipei');
+    datetime = m.format('YYYY-MM-DD');
+    bot.sendMessage(chatId, "<code>爸比今天有吃健康嗎？ 記得一餐吃菜菜，還有不超過一餐油炸的喔～</code>", {
+      "parse_mode": "HTML",
       "reply_markup": { 
         "inline_keyboard": [[
           {text:"有做到！", callback_data: "true"}, 
           {text:"沒有QQ", callback_data: "false"}
         ]]
       }
-    })
+    })  
+  }
+
+  if (msg.reply_to_message &&
+      msg.reply_to_message.from.username == "TokageBot" &&
+      msg.reply_to_message.text.includes('爸比')) {
+    reply_msg = msg.reply_to_message.text
+    current_msg = msg.text
+    const regex = /\[(.*?)\]/
+    datetime = reply_msg.match(regex)[1]
+    meal_type = ""
+    if (reply_msg.includes('早餐')) {
+      meal_type = 'breakfest';
+    } else if (reply_msg.includes('中餐')) {
+      meal_type = 'lunch';
+    } else if (reply_msg.include('晚餐')) {
+      meal_type = 'dinner';
+    }
+    console.log(datetime)
+    console.log(meal_type)
+    console.log(current_msg)
   }
 
   // if (resp.includes("想棋棋")) {

@@ -7,12 +7,7 @@ const stickerMapping = require('./stickers.js');
 const token = process.env.TOKEN;
 
 const {Client} = require('pg');
-const pg_config = {
-    user: "arthurlin",
-    password: "1234",
-    port: 5432,
-    database: "telegram"
-}
+
 async function createTable(pg_config){
     client = new Client(pg_config);
     await client.connect();
@@ -75,8 +70,6 @@ async function addHealthScore(pg_config, date, score){
     await client.end();
 }
 
-createTable(pg_config)
-
 const chatIds = {
     "TokageBot": '250655120',
     "OurGroup": '250655120' //'-231712129'
@@ -84,13 +77,30 @@ const chatIds = {
 chatId = ""
 
 let bot;
+let pg_config;
 console.log('Bot server started in the ' + process.env.NODE_ENV + ' mode');
 if (process.env.NODE_ENV === 'production') {
+    pg_config = {
+        user: "uwpfnrisnlsqie",
+        password: "a50e5ce839b0be1853bc54aecc591972c613fe7cecab78679f3bc7491e2096e2",
+        host: "ec2-107-22-222-161.compute-1.amazonaws.com",
+        port: 5432,
+        database: "ddg20htrjvjrtu"
+    }
+    createTable(pg_config)
     bot = new Bot(token);
     bot.setWebHook(process.env.HEROKU_URL + bot.token);
     chatId = chatIds["OurGroup"]
 }
 else {
+    pg_config = {
+        user: "arthurlin",
+        password: "1234",
+        host: "localhost",
+        port: 5432,
+        database: "telegram"
+    }
+    createTable(pg_config)
     bot = new Bot(token, { polling: true });
     chatId = chatIds["TokageBot"]
 }

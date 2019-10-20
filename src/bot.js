@@ -3,7 +3,7 @@ const Bot = require('node-telegram-bot-api');
 const moment = require('moment-timezone');
 const schedule = require('node-schedule-tz');
 
-const stickerMapping = require('./stickers.js');
+const stickerMapping = require('../resources/stickers.js');
 const token = process.env.TOKEN;
 
 const {Client} = require('pg');
@@ -72,7 +72,7 @@ async function addHealthScore(pg_config, date, score){
 
 const chatIds = {
     "TokageBot": '250655120',
-    "OurGroup": '250655120' //'-231712129'
+    "OurGroup": '-231712129'
 }
 chatId = ""
 
@@ -123,7 +123,7 @@ schedule.scheduleJob('0 0 19 * * *', function () {
     bot.sendMessage(chatId, `[${date}] <code>爸比晚餐吃什麼?</code>`, { "parse_mode": "HTML" })
 });
 
-schedule.scheduleJob('0 0 19 * * *', function () {
+schedule.scheduleJob('10 0 19 * * *', function () {
     bot.sendMessage(chatId, "<code>爸比今天有吃健康嗎？ 記得一餐吃菜菜，還有不超過一餐油炸的喔～</code>", {
         "parse_mode": "HTML",
         "reply_markup": {

@@ -1,6 +1,9 @@
 #My Telegram Bots
 
-###Login
+### Environment
+copy env.cmd to .env and fill the config
+
+### Login
 heroku login
 - Account: gn01168178@yahoo.com.tw
 - Password: Heroxxxxxx
@@ -9,4 +12,4 @@ heroku login
 npm run switch_to_dev
 
 ### Deploy
-git push tokage-app master
+git push heroku master
